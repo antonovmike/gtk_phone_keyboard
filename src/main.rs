@@ -2,79 +2,83 @@ extern crate gtk;
 
 use gtk::*;
 
-// Объявим структуру `Application`.
+fn main() {
+    // Инициализация GTK.
+    if gtk::init().is_err() {
+        eprintln!("GTK failed");
+        return;
+    }
+
+    // UI state
+    let app = Application::new();
+
+    // make widgets visible
+    app.window.show_all();
+
+    // start GTK loop
+    gtk::main();
+}
+
 pub struct Application {
     pub window: Window,
     pub header: Header,
 }
 
-// Объявим структуру `Header`.
 pub struct Header {
     pub container: HeaderBar,
-    pub button_1: Button, // add button in the header
+    pub button_1: Button, // add button on the header
 }
 
-// Блок реализации.
 impl Application {
     fn new() -> Application {
-        // Создадим новое окно с типом `Toplevel`.
         let window = Window::new(WindowType::Toplevel);
-        // Создадим header bar и связанный с ним контент.
+        // header bar and it's content
         let header = Header::new();
 
-        // Укажем название заголовка виджета.
+        // widget's title
         window.set_titlebar(&header.container);
-        // Укажем название для окна приложения.
-        window.set_title("Простая программа");
-        // Установим класс для оконного менеджера.
-        window.set_wmclass("simple-gtk", "Простая программа");
-        // Установим иконку, отображаемую приложением.
-        Window::set_default_icon_name("имя иконки");
+        // window's title
+        window.set_title("Just an app");
+        // manager's class
+        window.set_wmclass("simple-gtk", "Just an app");
+        // app's icon
+        Window::set_default_icon_name("icon's name");
 
-        // Программа закроется, если нажата кнопка выхода.
+        // Push button = close app
         window.connect_delete_event(move |_, _| {
             main_quit();
             Inhibit(false)
         });
 
-        // Возвращаем основное состояние приложения.
+        // return app's state
         Application { window, header }
     }
 }
 
 impl Header {
     fn new() -> Header {
-        // Создадим виджет контейнера для главной панели заголовка.
+        // create widget on the header
         let container = HeaderBar::new();
-        // Установим отображаемый тект в секции для названия.
-        container.set_title("Простая программа");
-        // Делаем активными элементы управления окна в этой панели.
+        // add app's name on the header bar
+        container.set_title("Just an app");
+        // make buttons active
         container.set_show_close_button(true);
 
-        let button_1 = Button::new_with_label("Кнопка 1");
+        let button_1 = Button::new_with_label("Button №1"); // DOES NOTHING
         button_1
             .get_style_context()
             .map(|c| c.add_class("no action"));
+
+        button_1.connect_clicked(move |button_1| {
+            button_1.set_label("back off!");
+        });
+
         container.pack_start(&button_1);
 
-        // Возвращаем заголовок и его состояние.
-        Header { container, button_1 }
+        // return header's state
+        Header {
+            container,
+            button_1,
+        }
     }
-}
-
-fn main() {
-    // Инициализация GTK.
-    if gtk::init().is_err() {
-        eprintln!("Не удалось инициализировать GTK приложение.");
-        return;
-    }
-
-    // Инициализация начального состояния UI.
-    let app = Application::new();
-
-    // Делаем видимыми все виджеты с UI.
-    app.window.show_all();
-
-    // Запуск основного цикла GTK.
-    gtk::main();
 }
