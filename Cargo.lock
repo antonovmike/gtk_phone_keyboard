@@ -342,6 +342,7 @@ dependencies = [
 name = "gtk_simple_button"
 version = "0.1.0"
 dependencies = [
+ "glib",
  "gtk",
 ]
 
