@@ -1,17 +1,23 @@
-extern crate gtk;
-use gtk::*;
-
-mod buttons;
+// use gtk::glib;
+use gtk::prelude::*;
+use gtk::{ApplicationWindow, Builder};
+// use gtk::{Button, Grid};
 
 fn main() {
-    // start GTK
-    if gtk::init().is_err() {
-        eprintln!("GTK failed");
-        return;
-    }
+    let application =
+    gtk::Application::new(Some("com.github.gtk-rs.examples.grid"), Default::default());
 
-    let app = buttons::Application::new();   // UI state
+    application.connect_activate(build_ui);
 
-    app.window.show_all();  // make widgets visible
-    gtk::main();            // start GTK loop
+    application.run();
+}
+
+fn build_ui(application: &gtk::Application) {
+    let glade_src = include_str!("grid.ui");
+    let builder = Builder::from_string(glade_src);
+
+    let window: ApplicationWindow = builder.object("window").expect("Couldn't get window");
+    window.set_application(Some(application));
+
+    window.show_all();
 }
