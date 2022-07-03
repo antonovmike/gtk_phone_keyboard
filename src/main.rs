@@ -8,7 +8,6 @@ fn main() {
     gtk::Application::new(Some("com.github.gtk-rs.examples.grid"), Default::default());
 
     application.connect_activate(build_ui);
-
     application.run();
 }
 
