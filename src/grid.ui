@@ -144,8 +144,22 @@
             <property name="width">1</property>
           </packing>
         </child>
-
         <!-- END OF KEYBOARD -->
+
+        <!-- LABEL -->
+        <child>
+          <object class="GtkLabel" id="GtkLabel">
+            <property name="label" translatable="yes">GtkLabel</property>
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="receives_default">True</property>
+          </object>
+          <packing>
+            <property name="left_attach">0</property>
+            <property name="top_attach">4</property>
+            <property name="width">3</property>
+          </packing>
+        </child>
 
         <child>
           <placeholder/>

@@ -1,4 +1,11 @@
 extern crate gtk;
+
+use crate::buttons::gtk::prelude::BoxExt;
+use crate::buttons::gtk::prelude::HeaderBarExt;
+use crate::buttons::gtk::prelude::WidgetExt;
+use crate::buttons::gtk::prelude::ContainerExt;
+use crate::buttons::gtk::prelude::GtkWindowExt;
+
 use gtk::*;
 
 pub struct Application {
@@ -22,7 +29,7 @@ impl Application {
         let content = Content::new();
 
         // widget's title
-        window.set_titlebar(&header.container);
+        window.set_titlebar(Some(&header.container));
         // window's title
         window.set_title("Just an app");
         // manager's class
@@ -48,7 +55,7 @@ impl Header {
         // create widget on the header
         let container = HeaderBar::new();
         // add app's name on the header bar
-        container.set_title("Just an app");
+        container.set_title(Some("Just an app"));
         // make buttons active
         container.set_show_close_button(true);
         
@@ -63,8 +70,8 @@ impl Content {
     fn new() -> Content {
         let container = Box::new(Orientation::Horizontal, 0);
 
-        let button_1 = Button::new_with_label("Button №1");
-        let button_2 = Button::new_with_label("Button №2");
+        let button_1 = Button::with_label("Button №1");
+        let button_2 = Button::with_label("Button №2");
         container.pack_start(&button_1, true, false, 0);
         container.pack_start(&button_2, true, false, 0);
         button_1.set_halign(Align::Start);

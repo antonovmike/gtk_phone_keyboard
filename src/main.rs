@@ -3,9 +3,12 @@ use gtk::prelude::*;
 use gtk::{ApplicationWindow, Builder};
 use gtk::{Button, Grid};
 
+mod buttons; // Does not work
+
 fn main() {
     let application =
-    gtk::Application::new(Some("com.github.gtk-rs.examples.grid"), Default::default());
+        gtk::Application::new(Some("com.github.gtk-rs.examples.grid"), Default::default());
+    // Some("com.github.gtk-rs.examples.grid") - application_id
 
     application.connect_activate(build_ui);
     application.run();
@@ -20,8 +23,9 @@ fn build_ui(application: &gtk::Application) {
 
     // button function
     let grid: Grid = builder.object("grid").expect("Couldn't get grid");
-    let button6: Button = builder.object("button0").expect("Couldn't get button0");
-    button6.connect_clicked(glib::clone!(@weak grid => move |button| {
+    let button0: Button = builder.object("button0").expect("Couldn't get button0");
+    button0.connect_clicked(glib::clone!(@weak grid => move |button| {
+        println!("Button 0");
         let left_attach = grid.cell_left_attach(button);
         let new_left_attach = if left_attach == 2 { 0 } else { left_attach + 1 };
         grid.set_cell_left_attach(button, new_left_attach);
