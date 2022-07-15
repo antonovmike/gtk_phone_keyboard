@@ -3,8 +3,6 @@ use gtk::prelude::*;
 use gtk::{ApplicationWindow, Builder};
 use gtk::{Button, Grid};
 
-mod buttons; // Does not work
-
 fn main() {
     let application =
         gtk::Application::new(Some("com.github.gtk-rs.examples.grid"), Default::default());
