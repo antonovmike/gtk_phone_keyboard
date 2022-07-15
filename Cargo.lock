@@ -3,44 +3,6 @@
 version = 3
 
 [[package]]
-<<<<<<< HEAD
-name = "atk-sys"
-version = "0.5.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "33a67fd81e1922dddc335887516f2f5254534e89c9d39fa89bca5d79bd150d34"
-dependencies = [
- "bitflags",
- "glib-sys",
- "gobject-sys",
- "libc",
- "pkg-config",
-]
-
-[[package]]
-name = "bitflags"
-version = "1.3.2"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "bef38d45163c2f1dde094a7dfd33ccf595c92905c8f8f4fdc18d06fb1037718a"
-
-[[package]]
-name = "c_vec"
-version = "1.2.1"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "6237ac5a4b1e81c213c24c6437964c61e646df910a914b4ab1487b46df20bd13"
-
-[[package]]
-name = "cairo-rs"
-version = "0.3.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "b6b5695f59fd036fe5741bc5a4eb20c78fbe42256e3b08a2af26bbcbe8070bf3"
-dependencies = [
- "c_vec",
- "cairo-sys-rs",
- "glib",
- "glib-sys",
- "libc",
- "winapi",
-=======
 name = "anyhow"
 version = "1.0.58"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -93,20 +55,10 @@ dependencies = [
  "glib",
  "libc",
  "thiserror",
->>>>>>> phone_like_keyboard
 ]
 
 [[package]]
 name = "cairo-sys-rs"
-<<<<<<< HEAD
-version = "0.5.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "7c6e18fecaeac51809db57f45f4553cc0975225a7eb435a7a7e91e5e8113a84d"
-dependencies = [
- "libc",
- "pkg-config",
- "winapi",
-=======
 version = "0.15.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "3c55d429bef56ac9172d25fecb85dc8068307d17acd74b377866b7a1ef25d3c8"
@@ -184,52 +136,26 @@ dependencies = [
  "pin-project-lite",
  "pin-utils",
  "slab",
->>>>>>> phone_like_keyboard
 ]
 
 [[package]]
 name = "gdk"
-<<<<<<< HEAD
-version = "0.7.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "a1e51db95be6565011bcd5cd99f9b17fdd585001057a999b21e09f1e8c28deb9"
-dependencies = [
- "bitflags",
- "cairo-rs",
- "cairo-sys-rs",
-=======
 version = "0.15.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "a6e05c1f572ab0e1f15be94217f0dc29088c248b14f792a5ff0af0d84bcda9e8"
 dependencies = [
  "bitflags",
  "cairo-rs",
->>>>>>> phone_like_keyboard
  "gdk-pixbuf",
  "gdk-sys",
  "gio",
  "glib",
-<<<<<<< HEAD
- "glib-sys",
- "gobject-sys",
-=======
->>>>>>> phone_like_keyboard
  "libc",
  "pango",
 ]
 
 [[package]]
 name = "gdk-pixbuf"
-<<<<<<< HEAD
-version = "0.3.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "16160d212ae91abe9f3324c3fb233929ba322dde63585d15cda3336f8c529ed1"
-dependencies = [
- "gdk-pixbuf-sys",
- "glib",
- "glib-sys",
- "gobject-sys",
-=======
 version = "0.15.11"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "ad38dd9cc8b099cceecdf41375bb6d481b1b5a7cd5cd603e10a69a9383f8619a"
@@ -238,49 +164,28 @@ dependencies = [
  "gdk-pixbuf-sys",
  "gio",
  "glib",
->>>>>>> phone_like_keyboard
  "libc",
 ]
 
 [[package]]
 name = "gdk-pixbuf-sys"
-<<<<<<< HEAD
-version = "0.5.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "798f97101eea8180da363d0e80e07ec7ec6d1809306601c0100c1de5bc8b4f52"
-dependencies = [
- "bitflags",
-=======
 version = "0.15.10"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "140b2f5378256527150350a8346dbdb08fadc13453a7a2d73aecd5fab3c402a7"
 dependencies = [
->>>>>>> phone_like_keyboard
  "gio-sys",
  "glib-sys",
  "gobject-sys",
  "libc",
-<<<<<<< HEAD
- "pkg-config",
-=======
  "system-deps",
->>>>>>> phone_like_keyboard
 ]
 
 [[package]]
 name = "gdk-sys"
-<<<<<<< HEAD
-version = "0.5.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "d4ee916f5f25c5f4b21bd9dcb12a216ae697406940ff9476358c308a8ececada"
-dependencies = [
- "bitflags",
-=======
 version = "0.15.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "32e7a08c1e8f06f4177fb7e51a777b8c1689f743a7bc11ea91d44d2226073a88"
 dependencies = [
->>>>>>> phone_like_keyboard
  "cairo-sys-rs",
  "gdk-pixbuf-sys",
  "gio-sys",
@@ -289,26 +194,11 @@ dependencies = [
  "libc",
  "pango-sys",
  "pkg-config",
-<<<<<<< HEAD
-=======
  "system-deps",
->>>>>>> phone_like_keyboard
 ]
 
 [[package]]
 name = "gio"
-<<<<<<< HEAD
-version = "0.3.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "84ba5a2beb559059a0c9c2bd3681743cdede8d9a36c775840bca800333b22867"
-dependencies = [
- "bitflags",
- "gio-sys",
- "glib",
- "glib-sys",
- "gobject-sys",
- "libc",
-=======
 version = "0.15.12"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "68fdbc90312d462781a395f7a16d96a2b379bb6ef8cd6310a2df272771c4283b"
@@ -322,22 +212,10 @@ dependencies = [
  "libc",
  "once_cell",
  "thiserror",
->>>>>>> phone_like_keyboard
 ]
 
 [[package]]
 name = "gio-sys"
-<<<<<<< HEAD
-version = "0.5.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "a303bbf7a5e75ab3b627117ff10e495d1b9e97e1d68966285ac2b1f6270091bc"
-dependencies = [
- "bitflags",
- "glib-sys",
- "gobject-sys",
- "libc",
- "pkg-config",
-=======
 version = "0.15.10"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "32157a475271e2c4a023382e9cab31c4584ee30a97da41d3c4e9fdd605abcf8d"
@@ -347,22 +225,10 @@ dependencies = [
  "libc",
  "system-deps",
  "winapi",
->>>>>>> phone_like_keyboard
 ]
 
 [[package]]
 name = "glib"
-<<<<<<< HEAD
-version = "0.4.1"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "b9b0452824cc63066940f01adc721804919f0b76cdba3cfab977b00b87f16d4a"
-dependencies = [
- "bitflags",
- "glib-sys",
- "gobject-sys",
- "lazy_static",
- "libc",
-=======
 version = "0.15.12"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "edb0306fbad0ab5428b0ca674a23893db909a98582969c9b537be4ced78c505d"
@@ -394,41 +260,20 @@ dependencies = [
  "proc-macro2",
  "quote",
  "syn",
->>>>>>> phone_like_keyboard
 ]
 
 [[package]]
 name = "glib-sys"
-<<<<<<< HEAD
-version = "0.5.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "d9693049613ff52b93013cc3d2590366d8e530366d288438724b73f6c7dc4be8"
-dependencies = [
- "bitflags",
- "libc",
- "pkg-config",
-=======
 version = "0.15.10"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "ef4b192f8e65e9cf76cbf4ea71fa8e3be4a0e18ffe3d68b8da6836974cc5bad4"
 dependencies = [
  "libc",
  "system-deps",
->>>>>>> phone_like_keyboard
 ]
 
 [[package]]
 name = "gobject-sys"
-<<<<<<< HEAD
-version = "0.5.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "60d507c87a71b1143c66ed21a969be9b99a76df234b342d733e787e6c9c7d7c2"
-dependencies = [
- "bitflags",
- "glib-sys",
- "libc",
- "pkg-config",
-=======
 version = "0.15.10"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "0d57ce44246becd17153bd035ab4d32cfee096a657fc01f2231c9278378d1e0a"
@@ -436,32 +281,10 @@ dependencies = [
  "glib-sys",
  "libc",
  "system-deps",
->>>>>>> phone_like_keyboard
 ]
 
 [[package]]
 name = "gtk"
-<<<<<<< HEAD
-version = "0.3.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "0847c507e52c1feaede13ef56fb4847742438602655449d5f1f782e8633f146f"
-dependencies = [
- "bitflags",
- "cairo-rs",
- "cairo-sys-rs",
- "gdk",
- "gdk-pixbuf",
- "gdk-pixbuf-sys",
- "gdk-sys",
- "gio",
- "gio-sys",
- "glib",
- "glib-sys",
- "gobject-sys",
- "gtk-sys",
- "libc",
- "pango",
-=======
 version = "0.15.5"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "92e3004a2d5d6d8b5057d2b57b3712c9529b62e82c77f25c1fecde1fd5c23bd0"
@@ -481,25 +304,15 @@ dependencies = [
  "once_cell",
  "pango",
  "pkg-config",
->>>>>>> phone_like_keyboard
 ]
 
 [[package]]
 name = "gtk-sys"
-<<<<<<< HEAD
-version = "0.5.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "905fcfbaaad1b44ec0b4bba9e4d527d728284c62bc2ba41fccedace2b096766f"
-dependencies = [
- "atk-sys",
- "bitflags",
-=======
 version = "0.15.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "d5bc2f0587cba247f60246a0ca11fe25fb733eabc3de12d1965fc07efab87c84"
 dependencies = [
  "atk-sys",
->>>>>>> phone_like_keyboard
  "cairo-sys-rs",
  "gdk-pixbuf-sys",
  "gdk-sys",
@@ -508,9 +321,6 @@ dependencies = [
  "gobject-sys",
  "libc",
  "pango-sys",
-<<<<<<< HEAD
- "pkg-config",
-=======
  "system-deps",
 ]
 
@@ -526,32 +336,21 @@ dependencies = [
  "proc-macro2",
  "quote",
  "syn",
->>>>>>> phone_like_keyboard
 ]
 
 [[package]]
 name = "gtk_simple_button"
 version = "0.1.0"
 dependencies = [
-<<<<<<< HEAD
-=======
  "glib",
->>>>>>> phone_like_keyboard
  "gtk",
 ]
 
 [[package]]
-<<<<<<< HEAD
-name = "lazy_static"
-version = "1.4.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "e2abad23fbc42b3700f2f279844dc832adb2b2eb069b2df918f455c4e18cc646"
-=======
 name = "heck"
 version = "0.4.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "2540771e65fc8cb83cd6e8a237f70c319bd5c29f78ed1084ba5d50eeac86f7f9"
->>>>>>> phone_like_keyboard
 
 [[package]]
 name = "libc"
@@ -560,18 +359,6 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "349d5a591cd28b49e1d1037471617a32ddcda5731b99419008085f72d5a53836"
 
 [[package]]
-<<<<<<< HEAD
-name = "pango"
-version = "0.3.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "3e81c404ab81ea7ea2fc2431a0a7672507b80e4b8bf4b41eac3fc83cc665104e"
-dependencies = [
- "bitflags",
- "glib",
- "glib-sys",
- "gobject-sys",
- "libc",
-=======
 name = "memoffset"
 version = "0.6.5"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -582,9 +369,9 @@ dependencies = [
 
 [[package]]
 name = "once_cell"
-version = "1.12.0"
+version = "1.13.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "7709cef83f0c1f58f666e746a08b21e0085f7440fa6a29cc194d68aac97a4225"
+checksum = "18a6dbe30758c9f83eb00cbea4ac95966305f5a7772f3f42ebfc7fc7eddbd8e1"
 
 [[package]]
 name = "pango"
@@ -596,26 +383,11 @@ dependencies = [
  "glib",
  "libc",
  "once_cell",
->>>>>>> phone_like_keyboard
  "pango-sys",
 ]
 
 [[package]]
 name = "pango-sys"
-<<<<<<< HEAD
-version = "0.5.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "34f34a1be107fe16abb2744e0e206bee4b3b07460b5fddd3009a6aaf60bd69ab"
-dependencies = [
- "bitflags",
- "glib-sys",
- "gobject-sys",
- "libc",
- "pkg-config",
-]
-
-[[package]]
-=======
 version = "0.15.10"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "d2a00081cde4661982ed91d80ef437c20eacaf6aa1a5962c0279ae194662c3aa"
@@ -648,19 +420,12 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "8b870d8c151b6f2fb93e84a13146138f05d02ed11c7e7c54f8826aaaf7c9f184"
 
 [[package]]
->>>>>>> phone_like_keyboard
 name = "pkg-config"
 version = "0.3.25"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "1df8c4ec4b0627e53bdf214615ad287367e482558cf84b109250b37464dc03ae"
 
 [[package]]
-<<<<<<< HEAD
-name = "winapi"
-version = "0.2.8"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "167dc9d6949a9b857f3451275e911c3f44255842c1f7a76f33c55103a909087a"
-=======
 name = "proc-macro-crate"
 version = "1.1.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -741,9 +506,9 @@ dependencies = [
 
 [[package]]
 name = "serde"
-version = "1.0.138"
+version = "1.0.139"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "1578c6245786b9d168c5447eeacfb96856573ca56c9d68fdcf394be134882a47"
+checksum = "0171ebb889e45aa68b44aee0859b3eede84c6f5f5c228e6f140c0b2a0a46cad6"
 
 [[package]]
 name = "slab"
@@ -812,9 +577,9 @@ dependencies = [
 
 [[package]]
 name = "ucd-trie"
-version = "0.1.3"
+version = "0.1.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "56dee185309b50d1f11bfedef0fe6d036842e3fb77413abef29f8f8d1c5d4c1c"
+checksum = "89570599c4fe5585de2b388aab47e99f7fa4e9238a1399f707a02e356058141c"
 
 [[package]]
 name = "unicode-ident"
@@ -855,4 +620,3 @@ name = "winapi-x86_64-pc-windows-gnu"
 version = "0.4.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "712e227841d057c1ee1cd2fb22fa7e5a5461ae8e48fa2ca79ec42cfc1931183f"
->>>>>>> phone_like_keyboard
