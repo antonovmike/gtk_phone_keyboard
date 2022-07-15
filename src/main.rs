@@ -1,84 +1,56 @@
-extern crate gtk;
+use gtk::glib;
+use gtk::prelude::*;
+use gtk::{ApplicationWindow, Builder};
+use gtk::{Button, Grid};
 
-use gtk::*;
+mod buttons; // Does not work
 
 fn main() {
-    // Инициализация GTK.
-    if gtk::init().is_err() {
-        eprintln!("GTK failed");
-        return;
-    }
+    let application =
+        gtk::Application::new(Some("com.github.gtk-rs.examples.grid"), Default::default());
+    // Some("com.github.gtk-rs.examples.grid") - application_id
 
-    // UI state
-    let app = Application::new();
-
-    // make widgets visible
-    app.window.show_all();
-
-    // start GTK loop
-    gtk::main();
+    application.connect_activate(build_ui);
+    application.run();
 }
 
-pub struct Application {
-    pub window: Window,
-    pub header: Header,
-}
+fn build_ui(application: &gtk::Application) {
+    let glade_src = include_str!("grid.ui");
+    let builder = Builder::from_string(glade_src);
 
-pub struct Header {
-    pub container: HeaderBar,
-    pub button_1: Button, // add button on the header
-}
+    let window: ApplicationWindow = builder.object("window").expect("Couldn't get window");
+    window.set_application(Some(application));
 
-impl Application {
-    fn new() -> Application {
-        let window = Window::new(WindowType::Toplevel);
-        // header bar and it's content
-        let header = Header::new();
+    // button function
+    let grid: Grid = builder.object("grid").expect("Couldn't get grid");
+    let button0: Button = builder.object("button0").expect("Couldn't get button0");
+    button0.connect_clicked(glib::clone!(@weak grid => move |button| {
+        println!("Button 0");
+        let left_attach = grid.cell_left_attach(button);
+        let new_left_attach = if left_attach == 2 { 0 } else { left_attach + 1 };
+        grid.set_cell_left_attach(button, new_left_attach);
+    }));
 
-        // widget's title
-        window.set_titlebar(&header.container);
-        // window's title
-        window.set_title("Just an app");
-        // manager's class
-        window.set_wmclass("simple-gtk", "Just an app");
-        // app's icon
-        Window::set_default_icon_name("icon's name");
+    let button1: Button = builder.object("button1").expect("Couldn't get button1");
+    let button2: Button = builder.object("button2").expect("Couldn't get button2");
+    let button3: Button = builder.object("button3").expect("Couldn't get button3");
+    let button4: Button = builder.object("button4").expect("Couldn't get button4");
+    let button5: Button = builder.object("button5").expect("Couldn't get button5");
+    let button6: Button = builder.object("button6").expect("Couldn't get button6");
+    let button7: Button = builder.object("button7").expect("Couldn't get button7");
+    let button8: Button = builder.object("button8").expect("Couldn't get button8");
+    let button9: Button = builder.object("button9").expect("Couldn't get button9");
 
-        // Push button = close app
-        window.connect_delete_event(move |_, _| {
-            main_quit();
-            Inhibit(false)
-        });
+    // Set the label to numerical letter after the button has been clicked on
+    button1.connect_clicked( move |button| button.set_label("I") );
+    button2.connect_clicked( move |button| button.set_label("II") );
+    button3.connect_clicked( move |button| button.set_label("III") );
+    button4.connect_clicked( move |button| button.set_label("IV") );
+    button5.connect_clicked( move |button| button.set_label("V") );
+    button6.connect_clicked( move |button| button.set_label("VI") );
+    button7.connect_clicked( move |button| button.set_label("VII") );
+    button8.connect_clicked( move |button| button.set_label("VIII") );
+    button9.connect_clicked( move |button| button.set_label("IX") );
 
-        // return app's state
-        Application { window, header }
-    }
-}
-
-impl Header {
-    fn new() -> Header {
-        // create widget on the header
-        let container = HeaderBar::new();
-        // add app's name on the header bar
-        container.set_title("Just an app");
-        // make buttons active
-        container.set_show_close_button(true);
-
-        let button_1 = Button::new_with_label("Button №1"); // DOES NOTHING
-        button_1
-            .get_style_context()
-            .map(|c| c.add_class("no action"));
-
-        button_1.connect_clicked(move |button_1| {
-            button_1.set_label("back off!");
-        });
-
-        container.pack_start(&button_1);
-
-        // return header's state
-        Header {
-            container,
-            button_1,
-        }
-    }
+    window.show_all();
 }
