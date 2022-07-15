@@ -339,7 +339,7 @@ dependencies = [
 ]
 
 [[package]]
-name = "gtk_simple_button"
+name = "gtk_phone_keyboard"
 version = "0.1.0"
 dependencies = [
  "glib",

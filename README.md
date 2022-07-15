@@ -1,2 +1,2 @@
-# gtk_simple_button
+# gtk_phone_keyboard
 learning GTK buttons
