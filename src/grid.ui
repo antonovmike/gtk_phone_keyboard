@@ -141,15 +141,14 @@
           <packing>
             <property name="left_attach">1</property>
             <property name="top_attach">3</property>
-            <property name="width">1</property>
+            <property name="width">3</property>
           </packing>
         </child>
-        <!-- END OF KEYBOARD -->
 
-        <!-- LABEL -->
+        <!-- ROW 5 -->
         <child>
-          <object class="GtkLabel" id="GtkLabel">
-            <property name="label" translatable="yes">GtkLabel</property>
+          <object class="GtkButton" id="minus">
+            <property name="label" translatable="yes">-</property>
             <property name="visible">True</property>
             <property name="can_focus">True</property>
             <property name="receives_default">True</property>
@@ -157,7 +156,65 @@
           <packing>
             <property name="left_attach">0</property>
             <property name="top_attach">4</property>
-            <property name="width">3</property>
+            <property name="height">2</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkButton" id="plus">
+            <property name="label" translatable="yes">+</property>
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="receives_default">True</property>
+          </object>
+          <packing>
+            <property name="left_attach">3</property>
+            <property name="top_attach">4</property>
+            <property name="height">2</property>
+          </packing>
+        </child>
+
+        <!-- ROW 1 -->
+        <child>
+          <object class="GtkButton" id="quit_button">
+            <property name="label" translatable="yes">Quit</property>
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="receives_default">True</property>
+          </object>
+          <packing>
+            <property name="left_attach">3</property>
+            <property name="top_attach">0</property>
+            <property name="height">4</property>
+          </packing>
+        </child>
+        <!-- END OF KEYBOARD -->
+
+        <!-- LABEL №1 -->
+        <child>
+          <object class="GtkLabel" id="GtkLabel_1">
+            <property name="label" translatable="yes">counter_label</property>
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="receives_default">True</property>
+          </object>
+          <packing>
+            <property name="left_attach">1</property>
+            <property name="top_attach">4</property>
+            <property name="width">2</property>
+          </packing>
+        </child>
+        <!-- LABEL №2 -->
+        <child>
+          <object class="GtkLabel" id="GtkLabel_2">
+            <property name="label" translatable="yes">label_time</property>
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="receives_default">True</property>
+          </object>
+          <packing>
+            <property name="left_attach">1</property>
+            <property name="top_attach">5</property>
+            <property name="width">2</property>
           </packing>
         </child>
 
